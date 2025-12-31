@@ -1,7 +1,7 @@
 [theme]
-primaryColor = "#c0c0c0"  # grey
+primaryColor = "#lt-grey"  # grey
 backgroundColor = "#000000" # black
-textColor = "#66cc00" #green
+textColor = "green" #green
 [server]
 port = 8501
 enableCORS = false
