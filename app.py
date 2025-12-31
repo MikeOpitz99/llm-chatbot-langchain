@@ -1,24 +1,25 @@
 import os
 import streamlit as st
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq  # FREE!
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
-st.title("🤖 Smart LLM Chatbot (Fixed!)")
+st.title("🤖 FREE Groq LLM Chatbot")
 
-api_key = st.secrets.get("OPENAI_API_KEY", "")
+# Groq key (free signup: console.groq.com/keys)
+api_key = st.secrets.get("GROQ_API_KEY", "")
 if not api_key:
-    api_key = st.sidebar.text_input("OpenAI API Key", type="password")
+    api_key = st.sidebar.text_input("Groq API Key", type="password")
 
 if not api_key:
-    st.error("Add OPENAI_API_KEY to Secrets! https://platform.openai.com/api-keys")
+    st.info("👉 Get free key: https://console.groq.com/keys")
     st.stop()
 
-os.environ["OPENAI_API_KEY"] = api_key
+os.environ["GROQ_API_KEY"] = api_key
 
 @st.cache_resource
 def get_chain():
-    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
+    llm = ChatGroq(model="llama3-8b-8192", temperature=0.7)  # Or "mixtral-8x7b-32768"
     memory = ConversationBufferMemory(return_messages=True)
     return ConversationChain(llm=llm, memory=memory)
 
@@ -31,7 +32,7 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-if prompt := st.chat_input("Ask anything!"):
+if prompt := st.chat_input("Ask away (FREE!)"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
