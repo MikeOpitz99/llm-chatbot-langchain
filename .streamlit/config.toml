@@ -1,12 +1,12 @@
 [theme]
 # Matrix neon green
-primaryColor = "#00FF41"
+primaryColor = "lt-green"
 # Black void BG
-backgroundColor = "#000000"
+backgroundColor = "black"
 # Dark matrix code BG
-secondaryBackgroundColor = "#001100"
+secondaryBackgroundColor = "lt-grey"
 # Glowing text
-textColor = "#00FF00"
+textColor = "lt-green"
 # MONO font (terminal code style)
 font = "monospace"
 
