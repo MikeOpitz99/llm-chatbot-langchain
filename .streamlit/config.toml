@@ -1,7 +1,17 @@
 [theme]
-primaryColor = "#lt-grey"  # grey
-backgroundColor = "#000000" # black
-textColor = "green" #green
+# Matrix neon green
+primaryColor = "#00FF41"
+# Black void BG
+backgroundColor = "#000000"
+# Dark matrix code BG
+secondaryBackgroundColor = "#001100"
+# Glowing text
+textColor = "#00FF00"
+# MONO font (terminal code style)
+font = "monospace"
+
+# Wide layout for immersion
 [server]
-port = 8501
+maxUploadSize = 200
+enableXsrfProtection = false
 enableCORS = false
