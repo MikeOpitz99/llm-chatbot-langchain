@@ -1,4 +1,13 @@
-markdown
+# ?? LLM Chatbot
+
+## ?? About
+Smart conversational agent with memory & custom chains. Uses OpenAI GPT + LangChain – ready for production chatbots.
+
+**Live Demo**: [Streamlit Cloud]
+
+## Tech
+- Conversation memory
+- Temperature control
 
 # LLM Chatbot with LangChain & Streamlit
 
