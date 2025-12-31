@@ -6,7 +6,7 @@
 Free AI chat powered by **Groq** (no OpenAI payment).
 
 ## 🚀 Live Demo
-[Chat Now](YOUR_STREAMLIT_URL)
+[Chat Now](https://mikeopitz99-llm-chatbot-langchain.streamlit.app/)
 
 ## 📦 Quick Start (Local)
 pip install -r requirements.txt
