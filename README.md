@@ -1,29 +1,24 @@
-![Visitors](https://visitor-badge.glitch.me/badge?page_id=MikeOpitz99.ai-portfolio-analyzer)
-[![License](https://img.shields.io/github/license/MikeOpitz99/ai-portfolio-analyzer)](LICENSE)
-[![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b?style=for-the-badge&logo=streamlit)](https://your-deploy.streamlit.app)
-# LLM Chatbot
+# 🤖 LLM Chatbot (FREE!)
 
-## About
-Smart conversational agent with memory & custom chains. Uses OpenAI GPT + LangChain � ready for production chatbots.
+[![Streamlit App](https://static.streamlit.io/badges/rocket.svg)](https://mikeopitz99-llm-chatbot-langchain.streamlit.app/) [![Stars](https://img.shields.io/github/stars/MikeOpitz99/llm-chatbot-langchain)](https://github.com/MikeOpitz99/llm-chatbot-langchain)
 
-**Live Demo**: [Streamlit Cloud]
+Free AI chat powered by **Groq** (no OpenAI payment).
 
-## Tech
-- Conversation memory
-- Temperature control
+## 🚀 Live Demo
+[Chat Now](YOUR_STREAMLIT_URL)
 
-# LLM Chatbot with LangChain & Streamlit
+## 📦 Quick Start (Local)
+pip install -r requirements.txt
+streamlit run app.py 
 
-A production-ready chatbot using OpenAI + LangChain for memory and tool integration.
+## 🔧 Customize
+- Edit `model` in `app.py` (e.g., `llama-3.3-70b-versatile`).
+- Secrets: `GROQ_API_KEY = gsk_...`
 
-## Demo
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Demo-brightgreen)](https://your-deployed-app.streamlit.app)
+## Models (Free)
+| Model | Speed |
+|-------|-------|
+| llama-3.1-8b-instant | ⚡ Fast |
+| llama-3.3-70b-versatile | 🧠 Smart |
 
-## Features
-- Persistent conversation memory
-- Customizable prompts
-- Deployable in seconds
-
-## Quick Start
-1. `pip install -r requirements.txt`
-2. `streamlit run app.py`
+Star/fork! Questions? @MikeOpitz99
