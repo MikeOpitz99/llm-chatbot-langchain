@@ -2,4 +2,3 @@ streamlit
 langchain-openai
 langchain-community
 langchain-core
-openai
