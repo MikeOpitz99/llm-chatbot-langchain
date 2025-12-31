@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#ffffff"  # black
-backgroundColor = "66cc00" # soft green
+primaryColor = "#66CC00"  # black
+backgroundColor = "#000000" # soft green
 [server]
 port = 8501
 enableCORS = false
