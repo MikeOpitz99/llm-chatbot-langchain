@@ -3,7 +3,7 @@ import os
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, AIMessage  # For history
 
-st.title("🤖 FREE Groq Chatbot - Perfect!")
+st.title("🤖 talk to a robot for FREE?? - Perfect!")
 
 api_key = st.secrets.get("GROQ_API_KEY")
 if not api_key:
