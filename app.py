@@ -19,7 +19,7 @@ os.environ["GROQ_API_KEY"] = api_key
 def get_llm():
     return ChatGroq(model="llama3-8b-8192", temperature=0.7)  # Confirmed model
 
-llm = ChatGroq(model="llama-3.2-3b-preview", temperature=0.7)  # Live & fast
+llm = ChatGroq(model="mixtral-8x7b-32768", temperature=0.7)  # Always live, powerful
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
