@@ -19,7 +19,7 @@ os.environ["GROQ_API_KEY"] = api_key
 def get_llm():
     return ChatGroq(model="llama3-8b-8192", temperature=0.7)  # Confirmed model
 
-llm = get_llm()
+llm = ChatGroq(model="llama3.1-8b-instant", temperature=0.7)  # NEW MODEL
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
