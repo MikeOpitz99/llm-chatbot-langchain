@@ -1,16 +1,13 @@
-import os
 import streamlit as st
+import os
 from langchain_groq import ChatGroq
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_core.messages import HumanMessage, AIMessage
 
-st.title("🤖 FREE Groq Chatbot - Modern LCEL!")
+st.title("🤖 FREE Groq Chatbot - No Hassle!")
 
-# Free Groq key: console.groq.com/keys
-api_key = st.secrets.get("GROQ_API_KEY", "")
+api_key = st.secrets.get("GROQ_API_KEY")
 if not api_key:
-    api_key = st.sidebar.text_input("Groq API Key", type="password")
+    api_key = st.sidebar.text_input("Groq API Key (free: console.groq.com/keys)", type="password")
 
 if not api_key:
     st.stop()
@@ -23,40 +20,29 @@ def get_llm():
 
 llm = get_llm()
 
-# LCEL Prompt Template
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are a helpful assistant."),
-    MessagesPlaceholder(variable_name="history"),
-    ("human", "{input}")
-])
-
-# Simple chain
-chain = prompt | llm
-
-if "session_history" not in st.session_state:
-    st.session_state.session_history = ChatMessageHistory()
-
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# Show chat history
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-if prompt_input := st.chat_input():
-    st.session_state.messages.append({"role": "user", "content": prompt_input})
+# New message
+if prompt := st.chat_input():
+    st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
-        st.markdown(prompt_input)
+        st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        # LCEL invoke with history
-        response = chain.invoke(
-            {"input": prompt_input, "history": st.session_state.session_history.messages}
-        )
-        resp_content = response.content
-        st.markdown(resp_content)
-        st.session_state.messages.append({"role": "assistant", "content": resp_content})
+        # Simple prompt with history
+        history = ""
+        for m in st.session_state.messages[-10:]:  # Last 10 msgs
+            role = "Human" if m["role"] == "user" else "Assistant"
+            history += f"{role}: {m['content']}\n"
 
-    # Update history
-    st.session_state.session_history.add_user_message(prompt_input)
-    st.session_state.session_history.add_ai_message(resp_content)
+        full_prompt = f"{history}Human: {prompt}\nAssistant:"
+        response = llm.invoke(full_prompt)
+        content = response.content
+        st.markdown(content)
+        st.session_state.messages.append({"role": "assistant", "content": content})
