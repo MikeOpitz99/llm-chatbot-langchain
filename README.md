@@ -1,3 +1,6 @@
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=MikeOpitz99.ai-portfolio-analyzer)
+[![License](https://img.shields.io/github/license/MikeOpitz99/ai-portfolio-analyzer)](LICENSE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b?style=for-the-badge&logo=streamlit)](https://your-deploy.streamlit.app)
 # ?? LLM Chatbot
 
 ## ?? About
