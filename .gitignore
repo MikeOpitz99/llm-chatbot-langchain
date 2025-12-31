@@ -1,4 +1,11 @@
-__pycache__/
-*.pyc
+# Env/secrets
 .env
-*.DS_Store
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Streamlit
+.streamlit/

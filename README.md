@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # 🤖 LLM Chatbot (FREE!)
 
 [![Streamlit App](https://static.streamlit.io/badges/rocket.svg)](https://mikeopitz99-llm-chatbot-langchain.streamlit.app/) [![Stars](https://img.shields.io/github/stars/MikeOpitz99/llm-chatbot-langchain)](https://github.com/MikeOpitz99/llm-chatbot-langchain)
@@ -22,3 +23,12 @@ streamlit run app.py
 | llama-3.3-70b-versatile | 🧠 Smart |
 
 Star/fork! Questions? @MikeOpitz99
+=======
+# LLM Chatbot (FREE Groq)
+
+[Deploy](https://mikeopitz99-llm-chatbot-langchain.streamlit.app/)
+
+Free AI chat with Groq (no OpenAI billing).
+
+## Run Local
+>>>>>>> Stashed changes
